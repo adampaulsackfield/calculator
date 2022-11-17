@@ -1,31 +1,57 @@
 import { operatorMap } from './map.mjs';
 import { convertToArray } from './functions.mjs';
 
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.querySelector('body');
-const calculator = document.querySelector('.calculator');
-const buttons = document.querySelectorAll('.calculator__button');
+const inputs = document.querySelectorAll('.input');
+const equals = document.getElementById('equals');
+const answer = document.getElementById('answer');
+const undo = document.getElementById('undo');
+const reset = document.getElementById('reset');
 
-// Add event listener to checkbox for theme toggler.
-themeToggle.addEventListener('change', () => {
-	console.log(themeToggle.checked);
-	body.classList.toggle('light-mode');
-	calculator.classList.toggle('light-mode');
-	buttons.forEach((button) => button.classList.toggle('light-mode'));
-});
+let currentCalculation = document.getElementById('currentCalculation');
 
 // Calculator Logic
 
 // State - I wanted to track the current state and the previous state to enable the undo button. That way before any operation we can set the previous state to the current state.
 const state = {
 	current: [],
-	previous: [],
+	currentString: '',
+	previousString: '1',
 	original: '',
 };
 
+const addInput = (e) => {
+	state.previousString = currentCalculation.innerHTML;
+
+	currentCalculation.innerHTML += e.target.dataset.value;
+};
+
+const undoInput = () => {
+	currentCalculation.innerHTML = state.previousString;
+};
+
+const resetInput = () => {
+	currentCalculation.innerHTML = '';
+	answer.innerHTML = '0';
+};
+
+// On inputs update previous state to current state then add next input.
+inputs.forEach((input) => {
+	input.addEventListener('click', (e) => addInput(e));
+});
+
+// Undo by reverting to previous state.
+undo.addEventListener('click', () => undoInput());
+
+// Reset Functionality
+reset.addEventListener('click', () => resetInput());
+
+const startCalc = (equation) => {
+	state.current = convertToArray(equation);
+	calculate();
+};
+
 // When the user click equals we can convert the incoming string to an array and set this as the current state.
-const MOCK_USER_INPUT = '12 * 4 + 6 / 2 * 4 / 2 + 6 * 12';
-state.current = convertToArray(MOCK_USER_INPUT);
+equals.addEventListener('click', () => startCalc(currentCalculation.innerHTML));
 
 // Function to perform single operations and update the current state. This is done by using the index for the operator and performing the operation on either side, saving the result on the left and removes the operator and the right side.
 const performCurrentOperation = (index, operator) => {
@@ -73,10 +99,7 @@ const calculate = () => {
 
 	// Important to end the recursion, we can assume if one element left then we have the answer.
 	if (state.current.length === 1) {
+		answer.innerHTML = state.current;
 		return { question: state.original, answer: state.current };
 	}
 };
-
-state.original = MOCK_USER_INPUT;
-
-console.log(calculate());
