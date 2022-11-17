@@ -1,5 +1,29 @@
 @use './variables' as *;
 
+.moon {
+	position: relative;
+	top: 8px;
+	left: 8px;
+	font-size: 2rem;
+	color: $background-dark-mode;
+}
+
+.sun {
+	position: relative;
+	top: -26px;
+	left: -36px;
+	font-size: 2rem;
+	z-index: 1;
+}
+
+.red {
+	color: $buttons-red;
+}
+
+.green {
+	color: $buttons-green;
+}
+
 body {
 	background-color: $background-dark-mode;
 	color: #fff;
@@ -14,4 +38,83 @@ body {
 .header {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+
+	&__toggle {
+		display: none;
+
+		& + div {
+			width: 96px;
+			height: 48px;
+			border-radius: 24px;
+			background-color: #e3000e;
+			transition-duration: 0.3s;
+			transition-property: background-color;
+			cursor: pointer;
+		}
+
+		&:checked + div {
+			background-color: #57bb00;
+		}
+
+		& + div > div {
+			float: left;
+			width: 46px;
+			height: 46px;
+			margin-top: 1px;
+			margin-left: 1px;
+			border-radius: 23px;
+			background-color: white;
+			transition-timing-function: ease;
+			transition-duration: 0.3s;
+			transition-property: transform;
+			pointer-events: none;
+			z-index: 1000;
+		}
+
+		&:checked + div > div {
+			transform: translateX(48px);
+		}
+	}
+}
+.container {
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.screen {
+	text-align: right;
+	padding: 1rem 0;
+}
+
+.calculator {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	border-radius: 20px;
+
+	background-color: $background-dark-mode-light;
+	padding: 1rem;
+
+	&.light-mode {
+		background-color: $background-light-mode-light;
+	}
+
+	&__button {
+		width: 20vw;
+		height: 20vw;
+		gap: 1rem;
+		border-radius: 20px;
+		margin-bottom: 1rem;
+		background-color: $button-background-dark-mode;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&.light-mode {
+			background-color: $button-background-light-mode;
+		}
+	}
 }
