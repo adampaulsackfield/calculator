@@ -57,3 +57,29 @@ console.log(secondCalculate(inputOne, 'adder', inputTwo))
 sign = 'subber'
 console.log(secondCalculate(inputOne, 'subber', inputTwo))
 ```
+
+## Method Three
+
+After some more thinking about the problem, it occured to me that it may be more expandable if I only used one input as a string. This way I could add the operators surrounded by a space ` + `. After splitting into an array it's possible to loop over and find the operators and using the index to perform the operation on the left and right side. Then saving the result at `i - 1` and removing the operator and right side we can recursively call it if we wrap it in a function. I tested the code whilst out walking on codepen and it seems promising.
+
+```js
+const sum = '4 + 4 * 4'
+
+const sumArr = sum.split(' ')
+
+console.log(sumArr)
+
+sumArr.forEach((item, i) => {
+  if(item === '*') {
+    console.log(sumArr[i - 1] * sumArr[i + 1])
+
+    sumArr[i - 1] = sumArr[i - 1] * sumArr[i + 1]
+  }
+})
+
+console.log(sumArr)
+
+// [ '4', '+', '4', '*', '4' ]
+// 16
+// [ '4', '+', 16, '*', '4' ]
+```
