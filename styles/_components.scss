@@ -1,0 +1,17 @@
+@use './variables' as *;
+
+body {
+	background-color: $background-dark-mode;
+	color: #fff;
+	padding: 1rem;
+
+	&.light-mode {
+		background-color: $background-light-mode;
+		color: #000;
+	}
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+}
