@@ -15,6 +15,6 @@
 
 ### Logic
 
-When planning this project and playing around in JSFiddle, I came up with two approaches I would explore, which you can view [here](https://github.com/adampaulsackfield/calculator/test-code.md).
+When planning this project and playing around in JSFiddle, I came up with two approaches I would explore, which you can view [here](https://github.com/adampaulsackfield/calculator/blob/main/test-code.md).
 
 ## Features
