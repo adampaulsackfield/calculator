@@ -21,65 +21,77 @@
 
 		<div class="container">
 			<section class="screen">
-				<h2 class="screen__sum">308 x 42</h2>
-				<h1 class="screen__result">12,936</h1>
+				<h2 id="currentCalculation" class="screen__sum"></h2>
+				<h1 id="answer" class="screen__result">0</h1>
 			</section>
 			<section class="calculator">
-				<div id="AC" class="calculator__button green">
+				<div id="reset" class="calculator__button green">
 					<p>AC</p>
 				</div>
-				<div id="plusMinus" class="calculator__button green">
+				<div
+					id="plusMinus"
+					class="calculator__button green input"
+					data-value="pm"
+				>
 					<p>&#177;</p>
 				</div>
 				<div id="percent" class="calculator__button green">
 					<p>%</p>
 				</div>
-				<div id="divide" class="calculator__button red">
+				<div id="divide" class="calculator__button red input" data-value=" / ">
 					<p>&#247;</p>
 				</div>
-				<div id="number-7" class="calculator__button">
+				<div id="number-7" class="calculator__button input" data-value="7">
 					<p>7</p>
 				</div>
-				<div id="number-8" class="calculator__button">
+				<div id="number-8" class="calculator__button input" data-value="8">
 					<p>8</p>
 				</div>
-				<div id="number-9" class="calculator__button">
+				<div id="number-9" class="calculator__button input" data-value="9">
 					<p>9</p>
 				</div>
-				<div id="multiply" class="calculator__button red">
+				<div
+					id="multiply"
+					class="calculator__button input red"
+					data-value=" * "
+				>
 					<p>&#215;</p>
 				</div>
-				<div id="number-4" class="calculator__button">
+				<div id="number-4" class="calculator__button input" data-value="4">
 					<p>4</p>
 				</div>
-				<div id="number-5" class="calculator__button">
+				<div id="number-5" class="calculator__button input" data-value="5">
 					<p>5</p>
 				</div>
-				<div id="number-6" class="calculator__button">
+				<div id="number-6" class="calculator__button input" data-value="6">
 					<p>6</p>
 				</div>
-				<div id="subtract" class="calculator__button red">
+				<div
+					id="subtract"
+					class="calculator__button input red"
+					data-value=" - "
+				>
 					<p>&#8722;</p>
 				</div>
-				<div id="number-1" class="calculator__button">
+				<div id="number-1" class="calculator__button input" data-value="1">
 					<p>1</p>
 				</div>
-				<div id="number-2" class="calculator__button">
+				<div id="number-2" class="calculator__button input" data-value="2">
 					<p>2</p>
 				</div>
-				<div id="number-3" class="calculator__button">
+				<div id="number-3" class="calculator__button input" data-value="3">
 					<p>3</p>
 				</div>
-				<div id="add" class="calculator__button red">
+				<div id="add" class="calculator__button input red" data-value=" + ">
 					<p>+</p>
 				</div>
 				<div id="undo" class="calculator__button">
 					<p>UNDO</p>
 				</div>
-				<div id="number-0" class="calculator__button">
+				<div id="number-0" class="calculator__button input" data-value="0">
 					<p>0</p>
 				</div>
-				<div id="decimal" class="calculator__button">
+				<div id="decimal" class="calculator__button input" data-value=".">
 					<p>.</p>
 				</div>
 				<div id="equals" class="calculator__button function red">
@@ -92,6 +104,7 @@
 			src="https://kit.fontawesome.com/c4c89ed4c4.js"
 			crossorigin="anonymous"
 		></script>
-		<script src="scripts/main.js" type="module"></script>
+		<script src="scripts/theme-toggle.js"></script>
+		<script src="scripts/main.mjs" type="module"></script>
 	</body>
 </html>
