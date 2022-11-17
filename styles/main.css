@@ -8,4 +8,19 @@ a,
 a:link,
 a:visited {
   text-decoration: none;
+}
+
+body {
+  background-color: #22252d;
+  color: #fff;
+  padding: 1rem;
+}
+body.light-mode {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=main.css.map */
