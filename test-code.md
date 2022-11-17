@@ -4,7 +4,7 @@ Here is a sample of the code I was experimenting with before I started the proje
 
 ## Method One
 
-Method one would be to use two input variables and a variable to store the operator (sign) and use a caluclate function with if statements to perform the correct operation. Although this approach seems to work I don't forsee how it could be expanded easily to add more input and operations.
+Method one would be to use two input variables and a variable to store the operator (sign) and use a calculate function with if statements to perform the correct operation. Although this approach seems to work I don't forsee how it could be expanded easily to add more input and operations.
 
 ```js
 const inputOne = 50;
@@ -60,7 +60,7 @@ console.log(secondCalculate(inputOne, 'subber', inputTwo))
 
 ## Method Three
 
-After some more thinking about the problem, it occured to me that it may be more expandable if I only used one input as a string. This way I could add the operators surrounded by a space ` + `. After splitting into an array it's possible to loop over and find the operators and using the index to perform the operation on the left and right side. Then saving the result at `i - 1` and removing the operator and right side we can recursively call it if we wrap it in a function. I tested the code whilst out walking on codepen and it seems promising.
+After some more thinking about the problem, it occurred to me that it may be more expandable if I only used one input as a string. This way I could add the operators surrounded by a space ` + `. After splitting into an array it's possible to loop over and find the operators and using the index to perform the operation on the left and right side. Then saving the result at `i - 1` and removing the operator and right side we can recursively call it if we wrap it in a function. I tested the code whilst out walking on CodePen and it seems promising.
 
 ```js
 const sum = '4 + 4 * 4'
@@ -83,3 +83,7 @@ console.log(sumArr)
 // 16
 // [ '4', '+', 16, '*', '4' ]
 ```
+
+## Outcome
+
+After settling on Method Three, I quickly realized it was difficult to escape out of a forEach method, I experimented with for-loops, some and every, but finally settled on .find.
