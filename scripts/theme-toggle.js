@@ -1,3 +1,5 @@
+// Simple theme-toggler - Adds classes to change to a light mode.
+
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.querySelector('body');
 const calculator = document.querySelector('.calculator');

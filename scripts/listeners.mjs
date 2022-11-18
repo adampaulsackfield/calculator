@@ -4,13 +4,13 @@ const inputs = document.querySelectorAll('.input');
 const undo = document.getElementById('undo');
 const reset = document.getElementById('reset');
 
-// On inputs update previous state to current state then add next input.
+// Event listeners for anything that can update the current user input on the display.
 inputs.forEach((input) => {
 	input.addEventListener('click', (e) => addInput(e));
 });
 
-// Undo by reverting to previous state.
+// Event listener for the undo feature
 undo.addEventListener('click', () => undoInput());
 
-// Reset Functionality
+// Event listener for the reset feature
 reset.addEventListener('click', () => resetInput());
