@@ -1,4 +1,4 @@
-// State Manager
+// State Manager - Using localStorage and Setter & Getter functions, I was able to implement a crude state manager, this allows the user to undo. Also, added the ability to persist state after a refresh.
 
 // Initial State
 const initialState = {
@@ -8,12 +8,12 @@ const initialState = {
 	original: '',
 };
 
-// Setter
+// Setter - Store the current state in local storage, this must be a string.
 const setState = (state) => {
 	localStorage.setItem('calcState', JSON.stringify(state));
 };
 
-// Getter
+// Getter - Retrieve the string from localStorage and parse it.
 const getState = () => {
 	const state = localStorage.getItem('calcState');
 
