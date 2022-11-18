@@ -6,6 +6,7 @@ const equals = document.getElementById('equals');
 const answer = document.getElementById('answer');
 const undo = document.getElementById('undo');
 const reset = document.getElementById('reset');
+const percent = document.getElementById('percent');
 
 let currentCalculation = document.getElementById('currentCalculation');
 
@@ -15,7 +16,7 @@ let currentCalculation = document.getElementById('currentCalculation');
 const state = {
 	current: [],
 	currentString: '',
-	previousString: '1',
+	previousString: '',
 	original: '',
 };
 
@@ -46,6 +47,7 @@ undo.addEventListener('click', () => undoInput());
 reset.addEventListener('click', () => resetInput());
 
 const startCalc = (equation) => {
+	state.original = state.currentString;
 	state.current = convertToArray(equation);
 	calculate();
 };
