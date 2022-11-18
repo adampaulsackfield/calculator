@@ -2,7 +2,7 @@
 
 ## Requirements
 
-1. A deployed website (using GitHub Pages)
+1. A deployed website (using GitHub Pages) ✅
 2. A public GitHub repository for your codebase ✅
 3. A README.md with a short intro to the project ✅
 4. At least 15 Git commits for the different stages in your development ✅
@@ -19,10 +19,10 @@ When planning this project and playing around in JSFiddle, I came up with three 
 
 - [✅] Simple Calculations (Two numbers and one operator).
 - [✅] Complex Calculations (Multiple operators, respects the order of operations). 🤯
-- [✅] Ability to undo with the implementation of state.
+- [✅] Ability to undo with the implementation of a custom state manager. 🤯
 - [✅] Reset functionality. Like AC button on most calculators.
-- [✅] Quickly convert percent to decimal.
+- [✅] Light and Dark Modes Available.
+- [ ] Responsive for Mobile, Tablet and Desktop.
+- [ ] Quickly convert percent to decimal.
 - [ ] Ability to work with floats.
 - [ ] Ability to use `+/-` button.
-- [ ] Responsive for Mobile, Tablet and Desktop.
-- [✅] Light and Dark Modes Available.

@@ -1,4 +1,4 @@
-import { convertToArray, updateView } from './functions.mjs';
+import { convertToArray, resetInput, updateView } from './functions.mjs';
 import { getState, setState } from './state-manager.mjs';
 import { calculate } from './calculator.mjs';
 import './listeners.mjs'; // Event Listeners are added.
@@ -11,7 +11,15 @@ const startCalc = () => {
 	// Here the initalState is brought in and we set the original value (to track the equation, if needed) to the user input. Then we set state.current to an array form of the user input using a helper function. Finally, we set the updated state and run the calculate function.
 	const state = getState();
 	state.original = state.currentString;
-	state.current = convertToArray(state.original);
+	const didConvert = convertToArray(state.original);
+
+	if (!didConvert) {
+		window.alert('Invalid input');
+		resetInput();
+		return;
+	}
+
+	state.current = didConvert;
 	setState(state);
 	calculate();
 };
