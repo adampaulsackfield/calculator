@@ -83,6 +83,8 @@ body.light-mode {
 }
 
 .container {
+  margin: auto;
+  max-width: 600px;
   height: 90vh;
   display: flex;
   flex-direction: column;
@@ -105,8 +107,8 @@ body.light-mode {
   background-color: #f9f9f9;
 }
 .calculator__button {
-  width: 20vw;
-  height: 20vw;
+  width: 100px;
+  height: 100px;
   gap: 1rem;
   border-radius: 20px;
   margin-bottom: 1rem;
