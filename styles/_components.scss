@@ -1,29 +1,5 @@
 @use './variables' as *;
 
-.moon {
-	position: relative;
-	top: 8px;
-	left: 8px;
-	font-size: 2rem;
-	color: $background-dark-mode;
-}
-
-.sun {
-	position: relative;
-	top: -26px;
-	left: -36px;
-	font-size: 2rem;
-	z-index: 1;
-}
-
-.red {
-	color: $buttons-red;
-}
-
-.green {
-	color: $buttons-green;
-}
-
 body {
 	background-color: $background-dark-mode;
 	color: #fff;
@@ -76,28 +52,48 @@ body {
 			transform: translateX(48px);
 		}
 	}
+
+	&__moon {
+		position: relative;
+		top: 8px;
+		left: 8px;
+		font-size: 2rem;
+		color: $background-dark-mode;
+	}
+
+	&__sun {
+		position: relative;
+		top: -26px;
+		left: -36px;
+		font-size: 2rem;
+		z-index: 1;
+	}
 }
 .container {
-	margin: auto;
-	max-width: 600px;
-	height: 90vh;
+	max-width: 100vw;
+	height: 96vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
+	justify-content: space-between;
 }
 
 .screen {
 	text-align: right;
-	padding: 1rem 0;
+	padding: 1rem;
+	font-size: 1.2rem;
+
+	&__sum {
+		margin: 0.6rem 0.2rem;
+	}
 }
 
 .calculator {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	border-radius: 20px;
+	padding: 1rem;
 
 	background-color: $background-dark-mode-light;
-	padding: 1rem;
 
 	&.light-mode {
 		background-color: $background-light-mode-light;
@@ -114,9 +110,51 @@ body {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		transition: filter ease-in-out 250ms;
+
+		&:hover {
+			filter: brightness(120%);
+		}
+
+		&--red {
+			color: $buttons-red;
+		}
+
+		&--green {
+			color: $buttons-green;
+		}
+
+		&--scientific {
+			display: none;
+		}
 
 		&.light-mode {
 			background-color: $button-background-light-mode;
+		}
+	}
+}
+
+.raised-inset {
+	box-shadow: 6px 6px 14px 0 rgba(127, 170, 55, 0.5),
+		-7px -7px 12px 0 rgba(220, 235, 194, 0.4);
+}
+.raised-inset:hover {
+	box-shadow: 6px 6px 14px 0 rgba(127, 170, 55, 0.5) inset,
+		-7px -7px 12px 0 rgba(220, 235, 194, 0.4) inset;
+	cursor: pointer;
+}
+
+@media screen and (min-width: $tablet-breakpoint) {
+	.calculator {
+		grid-template-columns: repeat(10, 1fr);
+
+		&__button {
+			width: 80px;
+			height: 80px;
+
+			&--scientific {
+				display: inherit;
+			}
 		}
 	}
 }
