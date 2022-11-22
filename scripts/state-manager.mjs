@@ -2,10 +2,11 @@
 
 // Initial State
 const initialState = {
-	current: [],
-	currentString: '',
-	previousString: '',
-	original: '',
+	equation: [],
+	currentInput: '',
+	original: [],
+	operatorLock: false,
+	decimalLock: false,
 };
 
 // Setter - Store the current state in local storage, this must be a string.
