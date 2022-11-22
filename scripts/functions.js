@@ -1,5 +1,5 @@
-import { operatorMap } from './maps.mjs';
-import { setState, getState, initialState } from './state-manager.mjs';
+import { operatorMap } from './maps.js';
+import { setState, getState, initialState } from './state-manager.js';
 
 const currentCalculation = document.getElementById('currentCalculation');
 const answer = document.getElementById('answer');

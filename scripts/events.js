@@ -9,7 +9,7 @@ import {
 	handleExponents,
 	handleXPowerY,
 	handleBracket,
-} from './functions.mjs';
+} from './functions.js';
 
 const inputs = document.querySelectorAll('.input');
 const operators = document.querySelectorAll('.operator');
