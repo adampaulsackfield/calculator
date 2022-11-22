@@ -1,8 +1,8 @@
-import './events.mjs';
-import { getState, setState } from './state-manager.mjs';
-import { updateView } from './functions.mjs';
-import { convertToPostfix } from './convertToPostfix.mjs';
-import { evaluatePostfix } from './evaluatePostfix.mjs';
+import './events.js';
+import { getState, setState } from './state-manager.js';
+import { updateView } from './functions.js';
+import { convertToPostfix } from './convertToPostfix.js';
+import { evaluatePostfix } from './evaluatePostfix.js';
 
 const equals = document.getElementById('equals');
 const answer = document.getElementById('answer');
