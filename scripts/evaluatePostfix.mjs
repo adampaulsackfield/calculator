@@ -5,10 +5,7 @@ import { operatorMap } from './maps.mjs';
 export const evaluatePostfix = (postfix) => {
 	let stack = [];
 
-	let postfixArr = postfix.split('');
-
-	postfixArr.forEach((char) => {
-		console.log('Here', { char, stack });
+	postfix.forEach((char) => {
 		if (!isNaN(Number(char))) {
 			stack.push(Number(char));
 		} else {

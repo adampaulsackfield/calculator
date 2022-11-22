@@ -7,6 +7,7 @@ const initialState = {
 	original: [],
 	operatorLock: false,
 	decimalLock: false,
+	xPowerY: { running: false, value: '' },
 };
 
 // Setter - Store the current state in local storage, this must be a string.
