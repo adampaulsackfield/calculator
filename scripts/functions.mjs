@@ -1,50 +1,119 @@
 import { setState, getState, initialState } from './state-manager.mjs';
-import { convertToArray } from './helpers.mjs';
 
-// Elements
-let currentCalculation = document.getElementById('currentCalculation');
+const currentCalculation = document.getElementById('currentCalculation');
 const answer = document.getElementById('answer');
 
-// Function for updating the view for the user. Takes an optional 'clear' argument which will reset, rather than append to, the current calculation.
 const updateView = (value, clear = false) => {
-	if (clear) return (currentCalculation.innerHTML = value);
+	if (clear) {
+		currentCalculation.innerHTML = '';
+		answer.innerHTML = 0;
+	}
 
-	currentCalculation.innerHTML += value;
-	answer.innerHTML = 0; // ! May cause issue if adding ability to perform further sums on the answer.
+	currentCalculation.innerHTML = value;
 };
 
-// Due to having a state manager, with previous state, we can offer an undo feature that reverts the current state to the previous state.
-const undoInput = () => {
-	const previous = getState();
+const showAnswer = (value) => {
+	answer.innerHTML = value;
+};
 
-	const current = {
-		...previous,
-		currentString: previous.previousString,
+const addInput = (e) => {
+	const previousState = getState();
+
+	if (e.target.dataset.value === undefined) return;
+
+	const updatedState = {
+		...previousState,
+		currentInput: (previousState.currentInput += e.target.dataset.value),
+		operatorLock: false,
 	};
-	setState(current);
-	updateView(current.currentString, true);
+
+	setState(updatedState);
+	updateView(updatedState.currentInput);
 };
 
-// Simply just resets the state and also the screen.
-const resetInput = () => {
+const addOperator = (e) => {
+	const previousState = getState();
+
+	if (e.target.dataset.value === undefined || previousState.operatorLock)
+		return;
+
+	const updatedState = {
+		...previousState,
+		equation: [
+			...previousState.equation,
+			previousState.currentInput,
+			e.target.dataset.value,
+		],
+		currentInput: '',
+		operatorLock: true,
+		decimalLock: false,
+	};
+
+	setState(updatedState);
+	updateView(updatedState.equation.join(' '));
+};
+
+const addPlusMinus = () => {
+	const previousState = getState();
+
+	const updatedState = {
+		...previousState,
+		currentInput: -previousState.currentInput,
+	};
+
+	setState(updatedState);
+	updateView(updatedState.currentInput);
+};
+
+const handleReset = () => {
 	setState(initialState);
 	updateView('', true);
 };
 
-// Using the spread operator on the current state of the previous state, we can then update the values we need. Those being the previousString and currentString. The data for each button press is stored as a data-value attribute on each element.
-const addInput = (e) => {
-	const previous = getState();
+const handlePercent = () => {
+	const previousState = getState();
 
-	// Logic here to check for invalid operator usage. Things like + + will not be allowed.
-	// TODO - Add logic to stop illegal operations.
-
-	const current = {
-		...previous,
-		previousString: previous.currentString,
-		currentString: (previous.currentString += e.target.dataset.value),
-	};
-	setState(current);
-	updateView(e.target.dataset.value);
+	const ans = +previousState.currentInput / 100;
+	showAnswer(ans);
 };
 
-export { convertToArray, undoInput, resetInput, updateView, addInput };
+const handleUndo = () => {
+	const previousState = getState();
+
+	previousState.equation.pop();
+
+	const updatedState = {
+		...previousState,
+		equation: previousState.equation,
+	};
+
+	setState(updatedState);
+	updateView(updatedState.equation);
+};
+
+const handleDecimal = (e) => {
+	const previousState = getState();
+
+	if (e.target.dataset.value === undefined || previousState.decimalLock) return;
+
+	const updatedState = {
+		...previousState,
+		currentInput: (previousState.currentInput += e.target.dataset.value),
+		operatorLock: false,
+		decimalLock: true,
+	};
+
+	setState(updatedState);
+	updateView(updatedState.currentInput);
+};
+
+export {
+	addInput,
+	addOperator,
+	addPlusMinus,
+	updateView,
+	handleReset,
+	handlePercent,
+	handleUndo,
+	handleDecimal,
+};

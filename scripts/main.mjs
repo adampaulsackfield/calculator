@@ -1,32 +1,38 @@
-import { convertToArray, resetInput, updateView } from './functions.mjs';
+import './events.mjs';
 import { getState, setState } from './state-manager.mjs';
-import { calculate } from './calculator.mjs';
-import './listeners.mjs'; // Event Listeners are added.
+import { updateView } from './functions.mjs';
+import { convertToPostfix } from './convertToPostfix.mjs';
+import { evaluatePostfix } from './evaluatePostfix.mjs';
 
-// Equals is where the answer will be displayed in the DOM
 const equals = document.getElementById('equals');
+const answer = document.getElementById('answer');
 
-// The function that runs when '=' is clicked
 const startCalc = () => {
-	// Here the initalState is brought in and we set the original value (to track the equation, if needed) to the user input. Then we set state.current to an array form of the user input using a helper function. Finally, we set the updated state and run the calculate function.
-	const state = getState();
-	state.original = state.currentString;
-	const didConvert = convertToArray(state.original);
+	const previousState = getState();
 
-	if (!didConvert) {
-		window.alert('Invalid input');
-		resetInput();
-		return;
-	}
+	const updatedState = {
+		...previousState,
+		equation: [...previousState.equation, previousState.currentInput],
+		currentInput: '',
+		original: [...previousState.equation, previousState.currentInput],
+	};
 
-	state.current = didConvert;
-	setState(state);
-	calculate();
+	setState(updatedState);
+
+	const postfix = convertToPostfix(updatedState.equation);
+
+	console.log('postfix', postfix);
+
+	const evaluation = evaluatePostfix(postfix);
+
+	console.log('evaluation', evaluation);
+
+	answer.innerHTML = evaluation;
 };
 
-// Event listener lives down here as it has to be after startCalc.
 equals.addEventListener('click', () => startCalc());
 
-// This checks for any state on load and if it exists we update the view to last state.
 const state = getState();
-if (state) updateView(state.currentString);
+if (state) updateView(state.equation.join(' '));
+
+console.log();
