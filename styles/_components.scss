@@ -11,10 +11,6 @@ body {
 	}
 }
 
-.hold {
-	filter: brightness(160%);
-}
-
 .header {
 	display: flex;
 	flex-direction: column;
@@ -74,7 +70,7 @@ body {
 	}
 }
 .container {
-	max-width: 100vw;
+	max-width: 95vw;
 	height: 96vh;
 	display: flex;
 	flex-direction: column;
@@ -104,8 +100,8 @@ body {
 	}
 
 	&__button {
-		width: 100px;
-		height: 100px;
+		width: 90px;
+		height: 90px;
 		gap: 1rem;
 		border-radius: 20px;
 		margin-bottom: 1rem;
@@ -153,8 +149,8 @@ body {
 		grid-template-columns: repeat(10, 1fr);
 
 		&__button {
-			width: 80px;
-			height: 80px;
+			width: 85px;
+			height: 85px;
 
 			&--scientific {
 				display: inherit;
