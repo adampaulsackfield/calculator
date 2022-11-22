@@ -13,7 +13,7 @@
 
 ## Approach
 
-When planning this project and playing around in JSFiddle, I came up with three approaches I would like explore, which you can view [here](https://github.com/adampaulsackfield/calculator/blob/main/test-code.md). In the end I went with the third method.
+When planning this project and playing around in JSFiddle, I came up with three approaches I would like explore, which you can view [here](https://github.com/adampaulsackfield/calculator/blob/main/test-code.md). In the end I went with the fourth method.
 
 ## Features
 
@@ -25,5 +25,5 @@ When planning this project and playing around in JSFiddle, I came up with three 
 - [✅] Responsive for Mobile, Tablet and Desktop.
 - [✅] Quickly convert percent to decimal.
 - [✅] Ability to use `+/-` button.
-- [ ] Ability to work with floats.
-- [ ] Scientific calculator functions
+- [✅] Ability to work with floats.
+- [✅] Scientific calculator functions
