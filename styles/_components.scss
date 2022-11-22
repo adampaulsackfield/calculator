@@ -11,6 +11,10 @@ body {
 	}
 }
 
+.hold {
+	filter: brightness(160%);
+}
+
 .header {
 	display: flex;
 	flex-direction: column;

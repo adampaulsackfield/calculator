@@ -1,3 +1,4 @@
+import { operatorMap } from './maps.mjs';
 import { setState, getState, initialState } from './state-manager.mjs';
 
 const currentCalculation = document.getElementById('currentCalculation');
@@ -17,9 +18,21 @@ const showAnswer = (value) => {
 };
 
 const addInput = (e) => {
+	document.getElementById('xPowerY').classList.remove('hold');
 	const previousState = getState();
 
 	if (e.target.dataset.value === undefined) return;
+
+	// Check for XPowerY
+	if (previousState.xPowerY.running) {
+		const answer = operatorMap['xPowerY'](
+			previousState.xPowerY.value,
+			e.target.dataset.value
+		);
+		showAnswer(answer);
+		setState(initialState);
+		return;
+	}
 
 	const updatedState = {
 		...previousState,
@@ -29,6 +42,7 @@ const addInput = (e) => {
 
 	setState(updatedState);
 	updateView(updatedState.currentInput);
+	console.log('state', updatedState);
 };
 
 const addOperator = (e) => {
@@ -92,6 +106,8 @@ const handleUndo = () => {
 };
 
 const handleDecimal = (e) => {
+	alert('This function is disabled at the moment.');
+	return;
 	const previousState = getState();
 
 	if (e.target.dataset.value === undefined || previousState.decimalLock) return;
@@ -107,6 +123,48 @@ const handleDecimal = (e) => {
 	updateView(updatedState.currentInput);
 };
 
+const handleExponents = (e) => {
+	const previousState = getState();
+
+	const answer = operatorMap[e.target.dataset.value](
+		previousState.currentInput
+	);
+
+	showAnswer(answer);
+};
+
+const handleXPowerY = (e) => {
+	const previousState = getState();
+
+	const updatedState = {
+		...previousState,
+		xPowerY: { running: true, value: previousState.currentInput },
+	};
+
+	// Show button pressed
+	document.getElementById('xPowerY').classList.add('hold');
+
+	setState(updatedState);
+};
+
+const handleBracket = (e) => {
+	const previousState = getState();
+
+	const updatedState = {
+		...previousState,
+		equation: [
+			...previousState.equation,
+			previousState.currentInput !== ''
+				? previousState.currentInput
+				: e.target.dataset.value,
+			,
+			e.target.dataset.value,
+		],
+	};
+
+	setState(updatedState);
+};
+
 export {
 	addInput,
 	addOperator,
@@ -116,4 +174,7 @@ export {
 	handlePercent,
 	handleUndo,
 	handleDecimal,
+	handleExponents,
+	handleXPowerY,
+	handleBracket,
 };

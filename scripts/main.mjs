@@ -6,6 +6,7 @@ import { evaluatePostfix } from './evaluatePostfix.mjs';
 
 const equals = document.getElementById('equals');
 const answer = document.getElementById('answer');
+const currentCalculation = document.getElementById('currentCalculation');
 
 const startCalc = () => {
 	const previousState = getState();
@@ -21,12 +22,9 @@ const startCalc = () => {
 
 	const postfix = convertToPostfix(updatedState.equation);
 
-	console.log('postfix', postfix);
-
 	const evaluation = evaluatePostfix(postfix);
 
-	console.log('evaluation', evaluation);
-
+	currentCalculation.innerHTML = previousState.original.join(' ');
 	answer.innerHTML = evaluation;
 };
 
@@ -34,5 +32,3 @@ equals.addEventListener('click', () => startCalc());
 
 const state = getState();
 if (state) updateView(state.equation.join(' '));
-
-console.log();

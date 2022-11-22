@@ -6,6 +6,9 @@ import {
 	handlePercent,
 	handleUndo,
 	handleDecimal,
+	handleExponents,
+	handleXPowerY,
+	handleBracket,
 } from './functions.mjs';
 
 const inputs = document.querySelectorAll('.input');
@@ -15,6 +18,10 @@ const reset = document.getElementById('reset');
 const percent = document.getElementById('percent');
 const undo = document.getElementById('undo');
 const decimal = document.getElementById('decimal');
+const xSquared = document.getElementById('xSquared');
+const xCubed = document.getElementById('xCubed');
+const xPowerY = document.getElementById('xPowerY');
+const brackets = document.querySelectorAll('.bracket');
 
 inputs.forEach((input) => {
 	input.addEventListener('click', (e) => addInput(e));
@@ -33,3 +40,13 @@ percent.addEventListener('click', handlePercent);
 undo.addEventListener('click', handleUndo);
 
 decimal.addEventListener('click', (e) => handleDecimal(e));
+
+xSquared.addEventListener('click', (e) => handleExponents(e));
+
+xCubed.addEventListener('click', (e) => handleExponents(e));
+
+xPowerY.addEventListener('click', (e) => handleXPowerY(e));
+
+brackets.forEach((bracket) => {
+	bracket.addEventListener('click', (e) => handleBracket(e));
+});
