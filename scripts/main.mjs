@@ -20,12 +20,12 @@ const startCalc = () => {
 
 	setState(updatedState);
 
+	// Here is where the Shunting Yard Algorithm is implemented and immediately evaluated using a stack.
 	const postfix = convertToPostfix(updatedState.equation);
-
 	const evaluation = evaluatePostfix(postfix);
 
 	currentCalculation.innerHTML = previousState.original.join(' ');
-	answer.innerHTML = evaluation;
+	answer.innerHTML = evaluation.toLocaleString('en-UK');
 };
 
 equals.addEventListener('click', () => startCalc());

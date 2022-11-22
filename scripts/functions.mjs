@@ -18,16 +18,20 @@ const showAnswer = (value) => {
 };
 
 const addInput = (e) => {
-	document.getElementById('xPowerY').classList.remove('hold');
 	const previousState = getState();
 
-	if (e.target.dataset.value === undefined) return;
+	const currentValue = e.target.dataset.value;
 
-	// Check for XPowerY
+	// XPowerY - removing any hold they may have been applied.
+	document.getElementById('xPowerY').classList.remove('hold');
+
+	if (currentValue === undefined) return;
+
+	// Check for XPowerY - If .running is true then the button has already been pressed and we can get the first value .value and the currentValue will be the e.target.dataset.value, in this case it becomes the exponent. Using the operator map we can use the xPowerY function.
 	if (previousState.xPowerY.running) {
 		const answer = operatorMap['xPowerY'](
 			previousState.xPowerY.value,
-			e.target.dataset.value
+			currentValue
 		);
 		showAnswer(answer);
 		setState(initialState);
@@ -36,28 +40,25 @@ const addInput = (e) => {
 
 	const updatedState = {
 		...previousState,
-		currentInput: (previousState.currentInput += e.target.dataset.value),
+		currentInput: (previousState.currentInput += currentValue),
 		operatorLock: false,
 	};
 
 	setState(updatedState);
 	updateView(updatedState.currentInput);
-	console.log('state', updatedState);
 };
 
 const addOperator = (e) => {
 	const previousState = getState();
 
-	if (e.target.dataset.value === undefined || previousState.operatorLock)
-		return;
+	const operator = e.target.dataset.value;
+
+	// If .operatorLock is true, then we refuse the input as the previous input must have been an operator.
+	if (operator === undefined || previousState.operatorLock) return;
 
 	const updatedState = {
 		...previousState,
-		equation: [
-			...previousState.equation,
-			previousState.currentInput,
-			e.target.dataset.value,
-		],
+		equation: [...previousState.equation, previousState.currentInput, operator],
 		currentInput: '',
 		operatorLock: true,
 		decimalLock: false,
@@ -106,15 +107,16 @@ const handleUndo = () => {
 };
 
 const handleDecimal = (e) => {
-	alert('This function is disabled at the moment.');
-	return;
 	const previousState = getState();
 
-	if (e.target.dataset.value === undefined || previousState.decimalLock) return;
+	const decimal = e.target.dataset.value;
+
+	// If .decimalLock is true, then we refuse the input as the previous input must have been an decimal.
+	if (decimal === undefined || previousState.decimalLock) return;
 
 	const updatedState = {
 		...previousState,
-		currentInput: (previousState.currentInput += e.target.dataset.value),
+		currentInput: (previousState.currentInput += decimal),
 		operatorLock: false,
 		decimalLock: true,
 	};
@@ -126,14 +128,14 @@ const handleDecimal = (e) => {
 const handleExponents = (e) => {
 	const previousState = getState();
 
-	const answer = operatorMap[e.target.dataset.value](
-		previousState.currentInput
-	);
+	const currentValue = e.target.dataset.value;
+
+	const answer = operatorMap[currentValue](previousState.currentInput);
 
 	showAnswer(answer);
 };
 
-const handleXPowerY = (e) => {
+const handleXPowerY = () => {
 	const previousState = getState();
 
 	const updatedState = {
@@ -148,21 +150,7 @@ const handleXPowerY = (e) => {
 };
 
 const handleBracket = (e) => {
-	const previousState = getState();
-
-	const updatedState = {
-		...previousState,
-		equation: [
-			...previousState.equation,
-			previousState.currentInput !== ''
-				? previousState.currentInput
-				: e.target.dataset.value,
-			,
-			e.target.dataset.value,
-		],
-	};
-
-	setState(updatedState);
+	alert('Coming soon!');
 };
 
 export {

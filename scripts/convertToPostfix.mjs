@@ -8,8 +8,6 @@ export const convertToPostfix = (equation) => {
 	let stack = [];
 
 	equation.forEach((char) => {
-		// console.log('Start', { output, stack, char }); // Debugging
-
 		if (char === '+' || char === '-' || char === '*' || char === '/') {
 			while (
 				stack.length &&

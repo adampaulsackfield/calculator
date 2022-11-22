@@ -45,7 +45,7 @@ xSquared.addEventListener('click', (e) => handleExponents(e));
 
 xCubed.addEventListener('click', (e) => handleExponents(e));
 
-xPowerY.addEventListener('click', (e) => handleXPowerY(e));
+xPowerY.addEventListener('click', handleXPowerY);
 
 brackets.forEach((bracket) => {
 	bracket.addEventListener('click', (e) => handleBracket(e));
