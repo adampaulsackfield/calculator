@@ -25,7 +25,10 @@ const addInput = (e) => {
 	// XPowerY - removing any hold they may have been applied.
 	document.getElementById('xPowerY').classList.remove('hold');
 
-	if (currentValue === undefined) return;
+	if (currentValue === undefined) {
+		alert('undefined'); // ! TODO DEBUGGING
+		return;
+	}
 
 	// Check for XPowerY - If .running is true then the button has already been pressed and we can get the first value .value and the currentValue will be the e.target.dataset.value, in this case it becomes the exponent. Using the operator map we can use the xPowerY function.
 	if (previousState.xPowerY.running) {
