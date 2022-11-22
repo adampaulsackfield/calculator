@@ -1,3 +1,7 @@
+// A simple function for evaluating postfix / Reverse Polish Notation. We push operands to the stack until we come to an operator. At which point you collect the top two operands, perform the operation and add the result back to the stack. Repeat until there are no elements remaining, return the top of the stack.
+
+import { operatorMap } from './maps.mjs';
+
 export const evaluatePostfix = (postfix) => {
 	let stack = [];
 
@@ -11,24 +15,8 @@ export const evaluatePostfix = (postfix) => {
 			let operandOne = stack.pop();
 			let operandTwo = stack.pop();
 
-			switch (char) {
-				case '+':
-					stack.push(operandTwo + operandOne);
-					break;
-				case '-':
-					stack.push(operandTwo - operandOne);
-					break;
-				case '/':
-					stack.push(operandTwo / operandOne);
-					break;
-				case '*':
-					stack.push(operandTwo * operandOne);
-					break;
-			}
+			stack.push(operatorMap[char](operandTwo, operandOne));
 		}
 	});
 	return stack.pop();
 };
-
-let exp = '446*3*+42/-9+2-';
-console.log(evaluatePostfix(exp));

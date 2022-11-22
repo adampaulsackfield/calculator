@@ -1,11 +1,7 @@
-const precedenceMap = {
-	'+': 1,
-	'-': 1,
-	'*': 2,
-	'/': 2,
-	'(': 0,
-	')': 0,
-};
+// Shunting Yard Algorithm
+// After the previous attempt at adhering to BODMAS, I realized it broke down with operators with the same precedence, where it should read from left to right. After a considerable amount of searching I discoverd this algorithm [Wikipedia](https://en.wikipedia.org/wiki/Shunting-yard_algorithm), which is a method for parsing arithmetic or logical expressions, taking an infix and outputting a postfix or Reverse Polish Notation. The result can then be sent to a parser to evaluate the equation and provide the answer. The implementation here is for simple calculations and has been implemented using the Pseudo-code as shown in the Wikipedia article.
+
+import { precedenceMap } from './maps.mjs';
 
 export const convertToPostfix = (equation) => {
 	let output = '';
@@ -42,5 +38,3 @@ export const convertToPostfix = (equation) => {
 
 	return output;
 };
-
-// convertToPostfix('4+4*6*3-4/2+9-2');

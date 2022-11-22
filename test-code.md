@@ -84,6 +84,25 @@ console.log(sumArr)
 // [ '4', '+', 16, '*', '4' ]
 ```
 
+## Method Four
+
+Method three was very promising, but it quickly become evident it was going to a massive undertaking to add more features and work on the order of operations from left-to-right. It was then that I stumbled across an algorithm called _Shunting Yard Algorithm_ which is a method for converting an _infix_ equation to a _postfix_ / _Reverse Polish Notation_ which can then be evaluated using a _postfix_ parser. The conversation process is quite simple you either push the current char to the stack or the output, depending on several rules. This process is perfect for full implementation of BODMAS and will be able to add bracket functionality with ease.
+
+```js
+const input = 7+6*3-2;
+
+const convertedToPostfix = 763*+2-
+
+const evaluated = 23
+```
+
 ## Outcome
 
-After settling on Method Three, I quickly realized it was difficult to escape out of a forEach method, I experimented with for-loops, some and every, but finally settled on .find.
+Really impressed to have found an algorithm and being able to implement this in JavaScript has been extremely fun to do. At first it was quite difficult to wrap my head around the _Shunting Yard Algorithm_, but after a few articles and couple of short YouTube videos, it made a lot more sense. With method four I was able to reduce the codebase by a considerable amount, thus lowering the complexity and allowing for more features to be added. It also makes it a lot more readable.
+
+## Resources
+
+- [Reddit Post that mentioned SYA](https://www.reddit.com/r/AskProgramming/comments/cbas25/how_to_program_pemdas_in_c/)
+- [Shunting Yard Wikipedia](https://en.wikipedia.org/wiki/Shunting-yard_algorithm)
+- [Shunting Yard Algorithm Video Description](https://youtu.be/Wz85Hiwi5MY)
+- [Postfix Stack Evaluation Video Description](https://youtu.be/bebqXO8H4eA)

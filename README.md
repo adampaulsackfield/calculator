@@ -18,11 +18,12 @@ When planning this project and playing around in JSFiddle, I came up with three 
 ## Features
 
 - [✅] Simple Calculations (Two numbers and one operator).
-- [✅] Complex Calculations (Multiple operators, respects the order of operations). 🤯
+- [✅] Complex Calculations (Multiple operators, respects the order of operations by implementing the [Shunting Yard Algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm)). 🤯
 - [✅] Ability to undo with the implementation of a custom state manager. 🤯
 - [✅] Reset functionality. Like AC button on most calculators.
 - [✅] Light and Dark Modes Available.
-- [ ] Responsive for Mobile, Tablet and Desktop.
-- [ ] Quickly convert percent to decimal.
+- [✅] Responsive for Mobile, Tablet and Desktop.
+- [✅] Quickly convert percent to decimal.
+- [✅] Ability to use `+/-` button.
 - [ ] Ability to work with floats.
-- [ ] Ability to use `+/-` button.
+- [ ] Scientific calculator functions
