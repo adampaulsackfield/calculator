@@ -14,18 +14,18 @@ a:visited {
   border: solid 1px green;
 }
 
+.hold {
+  filter: brightness(160%);
+}
+
 body {
   background-color: #22252d;
   color: #fff;
   padding: 1rem;
 }
 body.light-mode {
-  background-color: #e1e1e1;
+  background-color: #e9dac1;
   color: #000;
-}
-
-.hold {
-  filter: brightness(160%);
 }
 
 .header {
@@ -81,7 +81,7 @@ body.light-mode {
 }
 
 .container {
-  max-width: 100vw;
+  max-width: 95vw;
   height: 96vh;
   display: flex;
   flex-direction: column;
@@ -105,11 +105,11 @@ body.light-mode {
   background-color: #292d36;
 }
 .calculator.light-mode {
-  background-color: #f2f2f2;
+  background-color: #f7ecde;
 }
 .calculator__button {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   gap: 1rem;
   border-radius: 20px;
   margin-bottom: 1rem;
@@ -132,7 +132,7 @@ body.light-mode {
   display: none;
 }
 .calculator__button.light-mode {
-  background-color: #f7f7f7;
+  background-color: #d2cbcb;
 }
 
 .raised-inset {
@@ -149,8 +149,8 @@ body.light-mode {
     grid-template-columns: repeat(10, 1fr);
   }
   .calculator__button {
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 85px;
   }
   .calculator__button--scientific {
     display: inherit;

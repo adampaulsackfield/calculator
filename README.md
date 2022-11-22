@@ -13,7 +13,7 @@
 
 ## Approach
 
-When planning this project and playing around in JSFiddle, I came up with three approaches I would like explore, which you can view [here](https://github.com/adampaulsackfield/calculator/blob/main/test-code.md). In the end I went with the fourth method.
+When planning this project and playing around in JSFiddle, I came up with three approaches I would like explore, which you can view [here](https://github.com/adampaulsackfield/calculator/blob/main/test-code.md). In the end I went with the fourth method, which see the previous linked file for further details on the approach taken.
 
 ## Features
 
@@ -27,3 +27,18 @@ When planning this project and playing around in JSFiddle, I came up with three 
 - [✅] Ability to use `+/-` button.
 - [✅] Ability to work with floats.
 - [✅] Scientific calculator functions
+- [ ] Can include brackets in expressions
+
+## Testing
+
+### Unit Tests
+
+- [✅] convertToPostfix function
+- [✅] evaluatePostfix function
+
+### E2E Tests
+
+- [ ] Test inputting numbers
+- [ ] Test inputting operators
+- [ ] Test output after pressing equals
+- [ ] Test Exponent Functions
