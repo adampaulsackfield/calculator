@@ -19,16 +19,20 @@ const showAnswer = (value) => {
 
 const addInput = (e) => {
 	const previousState = getState();
+	console.log('=============');
+	console.log(e);
+	console.log('=============');
 
-	const currentValue = e.target.dataset.value;
+	const currentValue = Number(e.target.innerText);
+	console.log('>>>>>', { currentValue });
 
 	// XPowerY - removing any hold they may have been applied.
 	document.getElementById('xPowerY').classList.remove('hold');
 
-	if (currentValue === undefined) {
-		alert('undefined'); // ! TODO DEBUGGING
-		return;
-	}
+	// if (currentValue === undefined) {
+	// 	// alert('undefined'); // ! TODO DEBUGGING
+	// 	return;
+	// }
 
 	// Check for XPowerY - If .running is true then the button has already been pressed and we can get the first value .value and the currentValue will be the e.target.dataset.value, in this case it becomes the exponent. Using the operator map we can use the xPowerY function.
 	if (previousState.xPowerY.running) {
@@ -43,7 +47,7 @@ const addInput = (e) => {
 
 	const updatedState = {
 		...previousState,
-		currentInput: (previousState.currentInput += currentValue),
+		currentInput: (previousState.currentInput += Number(currentValue)),
 		operatorLock: false,
 	};
 
@@ -54,7 +58,7 @@ const addInput = (e) => {
 const addOperator = (e) => {
 	const previousState = getState();
 
-	const operator = e.target.dataset.value;
+	const operator = e.target.innerText;
 
 	// If .operatorLock is true, then we refuse the input as the previous input must have been an operator.
 	if (operator === undefined || previousState.operatorLock) return;
@@ -97,7 +101,7 @@ const handlePercent = () => {
 
 const handleUndo = () => {
 	const previousState = getState();
-
+	// TODO ? This function isn't working
 	previousState.equation.pop();
 
 	const updatedState = {
