@@ -22,6 +22,7 @@ body {
   background-color: #22252d;
   color: #fff;
   padding: 1rem;
+  letter-spacing: 2px;
 }
 body.light-mode {
   background-color: #e9dac1;
