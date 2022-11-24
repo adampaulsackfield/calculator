@@ -15,5 +15,6 @@ export const evaluatePostfix = (postfix) => {
 			stack.push(operatorMap[char](operandTwo, operandOne));
 		}
 	});
+
 	return stack.pop();
 };

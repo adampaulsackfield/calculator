@@ -37,14 +37,9 @@ describe('Calculator', () => {
 		it('should be able to perform a simple addition calculation', () => {
 			const answer = cy.get('#answer');
 
-			const numTwo = cy.get('#number-2');
-			const add = cy.get('#add');
-			const equals = cy.get('#equals');
+			const expression = ['number-2', 'add', 'number-2', 'equals'];
 
-			numTwo.click();
-			add.click();
-			numTwo.click();
-			equals.click();
+			buttonPresser(expression);
 
 			answer.contains('4'); // 2 + 2 = 4
 		});
@@ -52,15 +47,9 @@ describe('Calculator', () => {
 		it('should be able to perform a simple subtraction calculation', () => {
 			const answer = cy.get('#answer');
 
-			const numTwo = cy.get('#number-2');
-			const numFour = cy.get('#number-4');
-			const minus = cy.get('#subtract');
-			const equals = cy.get('#equals');
+			const expression = ['number-4', 'subtract', 'number-2', 'equals'];
 
-			numFour.click();
-			minus.click();
-			numTwo.click();
-			equals.click();
+			buttonPresser(expression);
 
 			answer.contains('2'); // 4 - 2 = 2
 		});
@@ -86,7 +75,6 @@ describe('Calculator', () => {
 
 		it('should be able to perform a simple calculation, using negative numbers', () => {
 			const answer = cy.get('#answer');
-			const equals = cy.get('#equals');
 
 			const expression = ['number-2', 'plusMinus', 'add', 'number-2', 'equals'];
 
@@ -99,7 +87,6 @@ describe('Calculator', () => {
 	describe('Complex Calculations', () => {
 		it('should be able to perform a simple calculation, with more than one operator', () => {
 			const answer = cy.get('#answer');
-			const equals = cy.get('#equals');
 
 			const expression = [
 				'number-2',
@@ -117,7 +104,6 @@ describe('Calculator', () => {
 
 		it('should be able to perform a calculation, using all four operators', () => {
 			const answer = cy.get('#answer');
-			const equals = cy.get('#equals');
 
 			const expression = [
 				'number-2',
@@ -139,7 +125,6 @@ describe('Calculator', () => {
 
 		it('should be able to perform a calculation, using all four operators with some multiples of the same operator', () => {
 			const answer = cy.get('#answer');
-			const equals = cy.get('#equals');
 
 			const expression = [
 				'number-2',
@@ -162,6 +147,48 @@ describe('Calculator', () => {
 			buttonPresser(expression);
 
 			answer.contains('114'); // 22 + 5 / 2 * 6 * 6 + 5 - 3 = 114
+		});
+
+		it('should be able to work with brackets', () => {
+			const answer = cy.get('#answer');
+
+			const expression = [
+				'leftBracket',
+				'number-8',
+				'multiply',
+				'number-4',
+				'rightBracket',
+				'subtract',
+				'number-6',
+				'equals',
+			];
+
+			buttonPresser(expression);
+
+			answer.contains('26'); // (8 * 4) - 6 = 26
+		});
+
+		it('should be able to work with multiple brackets', () => {
+			const answer = cy.get('#answer');
+
+			const expression = [
+				'leftBracket',
+				'number-6',
+				'multiply',
+				'number-4',
+				'rightBracket',
+				'subtract',
+				'leftBracket',
+				'number-6',
+				'add',
+				'number-4',
+				'rightBracket',
+				'equals',
+			];
+
+			buttonPresser(expression);
+
+			answer.contains('14'); // (6 * 4) - (6 + 4) = 14
 		});
 	});
 

@@ -113,18 +113,12 @@ const handleDecimal = (e) => {
 	updateView(updatedState.currentInput);
 };
 
-const handleSquare = (e) => {
+const handleExponent = (e) => {
 	const previousState = getState();
 
-	const answer = operatorMap['square'](previousState.currentInput);
+	const operator = e.target.innerText;
 
-	showAnswer(answer);
-};
-
-const handleCube = (e) => {
-	const previousState = getState();
-
-	const answer = operatorMap['cube'](previousState.currentInput);
+	const answer = operatorMap[operator](previousState.currentInput);
 
 	showAnswer(answer);
 };
@@ -144,7 +138,33 @@ const handleXPowerY = () => {
 };
 
 const handleBracket = (e) => {
-	alert('Coming soon!');
+	const previousState = getState();
+
+	const currentValue = e.target.innerText;
+
+	if (currentValue === '(') {
+		const updatedState = {
+			...previousState,
+			equation: [...previousState.equation, currentValue],
+		};
+		setState(updatedState);
+		updateView(updatedState.equation.join(''));
+	}
+
+	if (currentValue === ')') {
+		const updatedState = {
+			...previousState,
+			equation: [
+				...previousState.equation,
+				previousState.currentInput,
+				currentValue,
+			],
+			currentInput: '',
+		};
+		setState(updatedState);
+		updateView(updatedState.equation.join(''));
+	}
+	// alert('Coming soon!');
 };
 
 export {
@@ -156,8 +176,7 @@ export {
 	handlePercent,
 	handleUndo,
 	handleDecimal,
-	handleSquare,
-	handleCube,
+	handleExponent,
 	handleXPowerY,
 	handleBracket,
 };
