@@ -27,7 +27,7 @@ When planning this project and playing around in JSFiddle, I came up with three 
 - [✅] Ability to use `+/-` button.
 - [✅] Ability to work with floats.
 - [✅] Scientific calculator functions
-- [❌] Can include brackets in expressions
+- [✅] Can include brackets in expressions
 
 ## Testing
 
