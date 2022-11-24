@@ -12,8 +12,8 @@ const operatorMap = {
 	'*': (a, b) => a * b,
 	'+': (a, b) => a + b,
 	'-': (a, b) => a - b,
-	square: (a) => a * a,
-	cube: (a) => a * a * a,
+	X2: (a) => a * a,
+	X3: (a) => a * a * a,
 	xPowerY: (a, b) => a ** b,
 };
 

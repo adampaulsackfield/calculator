@@ -4,10 +4,13 @@
 import { precedenceMap } from './maps.js';
 
 export const convertToPostfix = (equation) => {
+	// Filter is used here to catch any erroneous '' entires in the array.
+	const filtered = equation.filter((input) => input !== '');
+
 	let output = [];
 	let stack = [];
 
-	equation.forEach((char) => {
+	filtered.forEach((char) => {
 		if (char === '+' || char === '-' || char === '*' || char === '/') {
 			while (
 				stack.length &&
@@ -32,6 +35,5 @@ export const convertToPostfix = (equation) => {
 	while (stack.length != 0) {
 		output.push(stack.pop());
 	}
-
 	return output;
 };
