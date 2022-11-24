@@ -14,25 +14,16 @@ const updateView = (value, clear = false) => {
 };
 
 const showAnswer = (value) => {
-	answer.innerHTML = value;
+	answer.innerHTML = value.toLocaleString('en-UK');
 };
 
 const addInput = (e) => {
 	const previousState = getState();
-	console.log('=============');
-	console.log(e);
-	console.log('=============');
 
 	const currentValue = Number(e.target.innerText);
-	console.log('>>>>>', { currentValue });
 
 	// XPowerY - removing any hold they may have been applied.
 	document.getElementById('xPowerY').classList.remove('hold');
-
-	// if (currentValue === undefined) {
-	// 	// alert('undefined'); // ! TODO DEBUGGING
-	// 	return;
-	// }
 
 	// Check for XPowerY - If .running is true then the button has already been pressed and we can get the first value .value and the currentValue will be the e.target.dataset.value, in this case it becomes the exponent. Using the operator map we can use the xPowerY function.
 	if (previousState.xPowerY.running) {
@@ -100,23 +91,13 @@ const handlePercent = () => {
 };
 
 const handleUndo = () => {
-	const previousState = getState();
-	// TODO ? This function isn't working
-	previousState.equation.pop();
-
-	const updatedState = {
-		...previousState,
-		equation: previousState.equation,
-	};
-
-	setState(updatedState);
-	updateView(updatedState.equation);
+	alert('Coming Soon!');
 };
 
 const handleDecimal = (e) => {
 	const previousState = getState();
 
-	const decimal = e.target.dataset.value;
+	const decimal = e.target.innerText;
 
 	// If .decimalLock is true, then we refuse the input as the previous input must have been an decimal.
 	if (decimal === undefined || previousState.decimalLock) return;
@@ -132,12 +113,18 @@ const handleDecimal = (e) => {
 	updateView(updatedState.currentInput);
 };
 
-const handleExponents = (e) => {
+const handleSquare = (e) => {
 	const previousState = getState();
 
-	const currentValue = e.target.dataset.value;
+	const answer = operatorMap['square'](previousState.currentInput);
 
-	const answer = operatorMap[currentValue](previousState.currentInput);
+	showAnswer(answer);
+};
+
+const handleCube = (e) => {
+	const previousState = getState();
+
+	const answer = operatorMap['cube'](previousState.currentInput);
 
 	showAnswer(answer);
 };
@@ -169,7 +156,8 @@ export {
 	handlePercent,
 	handleUndo,
 	handleDecimal,
-	handleExponents,
+	handleSquare,
+	handleCube,
 	handleXPowerY,
 	handleBracket,
 };
