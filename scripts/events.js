@@ -6,7 +6,8 @@ import {
 	handlePercent,
 	handleUndo,
 	handleDecimal,
-	handleExponents,
+	handleSquare,
+	handleCube,
 	handleXPowerY,
 	handleBracket,
 } from './functions.js';
@@ -41,9 +42,9 @@ undo.addEventListener('click', handleUndo);
 
 decimal.addEventListener('click', (e) => handleDecimal(e));
 
-xSquared.addEventListener('click', (e) => handleExponents(e));
+xSquared.addEventListener('click', (e) => handleSquare(e));
 
-xCubed.addEventListener('click', (e) => handleExponents(e));
+xCubed.addEventListener('click', (e) => handleCube(e));
 
 xPowerY.addEventListener('click', handleXPowerY);
 
