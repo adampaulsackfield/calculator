@@ -13,7 +13,7 @@
 
 ## Approach
 
-When planning this project and playing around in JSFiddle, I came up with three approaches I would like explore, which you can view [here](https://github.com/adampaulsackfield/calculator/blob/main/test-code.md). In the end I went with the fourth method, which see the previous linked file for further details on the approach taken.
+When planning this project and playing around in JSFiddle, I came up with four approaches I would like explore, which you can view [here](https://github.com/adampaulsackfield/calculator/blob/main/test-code.md). In the end I went with the fourth method, which see the previous linked file for further details on the approach taken.
 
 ## Features
 
@@ -43,3 +43,4 @@ When planning this project and playing around in JSFiddle, I came up with three 
 - [✅] Test simple expressions
 - [✅] Test complex expressions
 - [✅] Test Exponent Functions
+- [❌] Test state-manager - localStorage
