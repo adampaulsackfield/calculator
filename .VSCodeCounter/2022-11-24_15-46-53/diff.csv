@@ -1,0 +1,9 @@
+"filename", "language", "JavaScript", "HTML", "Markdown", "comment", "blank", "total"
+"/Users/adamsackfield/Development/Nology/projects/calculator/README.md", "Markdown", 0, 0, 1, 0, 0, 1
+"/Users/adamsackfield/Development/Nology/projects/calculator/cypress/e2e/calculate.cy.js", "JavaScript", 19, 0, 0, 0, 8, 27
+"/Users/adamsackfield/Development/Nology/projects/calculator/index.html", "HTML", 0, -143, 0, 0, 0, -143
+"/Users/adamsackfield/Development/Nology/projects/calculator/scripts/convertToPostfix.js", "JavaScript", 1, 0, 0, 1, 0, 2
+"/Users/adamsackfield/Development/Nology/projects/calculator/scripts/evaluatePostfix.js", "JavaScript", 0, 0, 0, 0, 1, 1
+"/Users/adamsackfield/Development/Nology/projects/calculator/scripts/events.js", "JavaScript", -1, 0, 0, 0, 0, -1
+"/Users/adamsackfield/Development/Nology/projects/calculator/scripts/functions.js", "JavaScript", 17, 0, 0, 1, 1, 19
+"Total", "-", 36, -143, 1, 2, 10, -94

@@ -18,15 +18,29 @@ a:visited {
   filter: brightness(160%);
 }
 
+.dark-mode {
+  --background: #22252d;
+  --background-light: #292d36;
+  --button-background: #272b33;
+  --buttons-primary: #ec7777;
+  --buttons-secondary: #26f0cb;
+  --text-primary: white;
+}
+
+.light-mode {
+  --background: #e9dac1;
+  --background-light: #f7ecde;
+  --button-background: #d2cbcb;
+  --buttons-primary: #983a3a;
+  --buttons-secondary: #158a75;
+  --text-primary: black;
+}
+
 body {
-  background-color: #22252d;
-  color: #fff;
+  background-color: var(--background);
+  color: var(--text-primary);
   padding: 1rem;
   letter-spacing: 2px;
-}
-body.light-mode {
-  background-color: #e9dac1;
-  color: #000;
 }
 
 .header {
@@ -71,7 +85,7 @@ body.light-mode {
   top: 8px;
   left: 8px;
   font-size: 2rem;
-  color: #22252d;
+  color: var(--background);
 }
 .header__sun {
   position: relative;
@@ -82,11 +96,11 @@ body.light-mode {
 }
 
 .container {
-  max-width: 95vw;
   height: 96vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 1rem 0;
 }
 
 .screen {
@@ -101,20 +115,18 @@ body.light-mode {
 .calculator {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
   border-radius: 20px;
   padding: 1rem;
-  background-color: #292d36;
-}
-.calculator.light-mode {
-  background-color: #f7ecde;
+  gap: 1rem;
+  background-color: var(--background-light);
 }
 .calculator__button {
   width: 90px;
   height: 90px;
   gap: 1rem;
   border-radius: 20px;
-  margin-bottom: 1rem;
-  background-color: #272b33;
+  background-color: var(--button-background);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,16 +136,13 @@ body.light-mode {
   filter: brightness(120%);
 }
 .calculator__button--red {
-  color: #ec7777;
+  color: var(--buttons-primary);
 }
 .calculator__button--green {
-  color: #26f0cb;
+  color: var(--buttons-secondary);
 }
 .calculator__button--scientific {
   display: none;
-}
-.calculator__button.light-mode {
-  background-color: #d2cbcb;
 }
 
 .raised-inset {

@@ -1,15 +1,10 @@
 @use './variables' as *;
 
 body {
-	background-color: $background-dark-mode;
-	color: #fff;
+	background-color: var(--background);
+	color: var(--text-primary);
 	padding: 1rem;
 	letter-spacing: 2px;
-
-	&.light-mode {
-		background-color: $background-light-mode;
-		color: #000;
-	}
 }
 
 .header {
@@ -59,7 +54,7 @@ body {
 		top: 8px;
 		left: 8px;
 		font-size: 2rem;
-		color: $background-dark-mode;
+		color: var(--background);
 	}
 
 	&__sun {
@@ -70,12 +65,13 @@ body {
 		z-index: 1;
 	}
 }
+
 .container {
-	max-width: 95vw;
 	height: 96vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	padding: 1rem 0;
 }
 
 .screen {
@@ -91,22 +87,19 @@ body {
 .calculator {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	justify-items: center;
 	border-radius: 20px;
 	padding: 1rem;
+	gap: 1rem;
 
-	background-color: $background-dark-mode-light;
-
-	&.light-mode {
-		background-color: $background-light-mode-light;
-	}
+	background-color: var(--background-light);
 
 	&__button {
 		width: 90px;
 		height: 90px;
 		gap: 1rem;
 		border-radius: 20px;
-		margin-bottom: 1rem;
-		background-color: $button-background-dark-mode;
+		background-color: var(--button-background);
 
 		display: flex;
 		justify-content: center;
@@ -118,19 +111,15 @@ body {
 		}
 
 		&--red {
-			color: $buttons-red;
+			color: var(--buttons-primary);
 		}
 
 		&--green {
-			color: $buttons-green;
+			color: var(--buttons-secondary);
 		}
 
 		&--scientific {
 			display: none;
-		}
-
-		&.light-mode {
-			background-color: $button-background-light-mode;
 		}
 	}
 }

@@ -7,7 +7,11 @@ const buttons = document.querySelectorAll('.calculator__button');
 
 // Add event listener to checkbox for theme toggler.
 themeToggle.addEventListener('change', () => {
-	body.classList.toggle('light-mode');
-	calculator.classList.toggle('light-mode');
-	buttons.forEach((button) => button.classList.toggle('light-mode'));
+	if (body.classList.contains('dark-mode')) {
+		body.classList.replace('dark-mode', 'light-mode');
+	} else {
+		body.classList.replace('light-mode', 'dark-mode');
+	}
+	// body.classList.toggle('light-mode');
+	// body.classList.toggle('dark-mode');
 });

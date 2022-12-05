@@ -1,0 +1,65 @@
+Date : 2022-11-24 15:46:53
+Directory : /Users/adamsackfield/Development/Nology/projects/calculator
+Total : 28 files,  10872 codes, 65 comments, 311 blanks, all 11248 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          2 |      9,697 |          0 |          2 |      9,699 |
+| JavaScript |         16 |        529 |         60 |        166 |        755 |
+| HTML       |          1 |        219 |          0 |         53 |        272 |
+| SCSS       |          5 |        166 |          5 |         36 |        207 |
+| CSS        |          1 |        148 |          0 |         11 |        159 |
+| Markdown   |          2 |        112 |          0 |         43 |        155 |
+| Ignore     |          1 |          1 |          0 |          0 |          1 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                           | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                              |         28 |     10,872 |         65 |        311 |     11,248 |
+| __tests__                                                                                      |          2 |         34 |          0 |          6 |         40 |
+| assets                                                                                         |          1 |         19 |          0 |          3 |         22 |
+| cypress                                                                                        |          3 |        176 |         42 |         66 |        284 |
+| cypress/e2e                                                                                    |          1 |        175 |          0 |         62 |        237 |
+| cypress/support                                                                                |          2 |          1 |         42 |          4 |         47 |
+| scripts                                                                                        |          8 |        290 |         17 |         88 |        395 |
+| styles                                                                                         |          6 |        314 |          5 |         47 |        366 |
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                       | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/adamsackfield/Development/Nology/projects/calculator/.prettierignore                    | Ignore     |          1 |          0 |          0 |          1 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/README.md                          | Markdown   |         35 |          0 |         12 |         47 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/__tests__/convertToPostfix.test.js | JavaScript |         17 |          0 |          3 |         20 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/__tests__/evaluatePostfix.test.js  | JavaScript |         17 |          0 |          3 |         20 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/assets/expressions.js              | JavaScript |         19 |          0 |          3 |         22 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/babel.config.js                    | JavaScript |          3 |          0 |          1 |          4 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/cypress.config.js                  | JavaScript |          7 |          1 |          2 |         10 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/cypress/e2e/calculate.cy.js        | JavaScript |        175 |          0 |         62 |        237 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/cypress/support/commands.js        | JavaScript |          0 |         25 |          1 |         26 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/cypress/support/e2e.js             | JavaScript |          1 |         17 |          3 |         21 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/index.html                         | HTML       |        219 |          0 |         53 |        272 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/package-lock.json                  | JSON       |      9,669 |          0 |          1 |      9,670 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/package.json                       | JSON       |         28 |          0 |          1 |         29 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/scripts/convertToPostfix.js        | JavaScript |         31 |          3 |          6 |         40 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/scripts/evaluatePostfix.js         | JavaScript |         14 |          1 |          6 |         21 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/scripts/events.js                  | JavaScript |         40 |          0 |         13 |         53 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/scripts/functions.js               | JavaScript |        136 |          6 |         41 |        183 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/scripts/main.js                    | JavaScript |         25 |          1 |          9 |         35 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/scripts/maps.js                    | JavaScript |         18 |          0 |          3 |         21 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/scripts/state-manager.js           | JavaScript |         17 |          4 |          7 |         28 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/scripts/theme-toggle.js            | JavaScript |          9 |          2 |          3 |         14 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/styles/_base.scss                  | SCSS       |          6 |          0 |          2 |          8 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/styles/_components.scss            | SCSS       |        135 |          0 |         27 |        162 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/styles/_reset.scss                 | SCSS       |         10 |          1 |          2 |         13 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/styles/_variables.scss             | SCSS       |         12 |          4 |          4 |         20 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/styles/main.css                    | CSS        |        148 |          0 |         11 |        159 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/styles/main.scss                   | SCSS       |          3 |          0 |          1 |          4 |
+| /Users/adamsackfield/Development/Nology/projects/calculator/test-code.md                       | Markdown   |         77 |          0 |         31 |        108 |
+| Total                                                                                          |            |     10,872 |         65 |        311 |     11,248 |
++------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
