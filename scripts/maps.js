@@ -5,6 +5,9 @@ const precedenceMap = {
 	'/': 2,
 	'(': 0,
 	')': 0,
+	hasPrecedence: function (a, b) {
+		return this[a] <= this[b];
+	},
 };
 
 const operatorMap = {

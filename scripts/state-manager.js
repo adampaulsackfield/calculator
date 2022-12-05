@@ -7,6 +7,7 @@ const initialState = {
 	original: [],
 	operatorLock: false,
 	decimalLock: false,
+	numberLock: false,
 	xPowerY: { running: false, value: '' },
 };
 

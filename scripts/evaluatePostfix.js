@@ -3,7 +3,7 @@
 import { operatorMap } from './maps.js';
 
 export const evaluatePostfix = (postfix) => {
-	let stack = [];
+	const stack = [];
 
 	postfix.forEach((char) => {
 		if (!isNaN(Number(char))) {

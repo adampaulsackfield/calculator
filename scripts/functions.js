@@ -20,6 +20,8 @@ const showAnswer = (value) => {
 const addInput = (e) => {
 	const previousState = getState();
 
+	if (previousState.numberLock) return;
+
 	const currentValue = Number(e.target.innerText);
 
 	// XPowerY - removing any hold they may have been applied.
@@ -60,6 +62,7 @@ const addOperator = (e) => {
 		currentInput: '',
 		operatorLock: true,
 		decimalLock: false,
+		numberLock: false,
 	};
 
 	setState(updatedState);
@@ -84,9 +87,10 @@ const handleReset = () => {
 };
 
 const handlePercent = () => {
-	const previousState = getState();
+	const { currentInput } = getState();
 
-	const ans = +previousState.currentInput / 100;
+	const ans = +currentInput / 100;
+
 	showAnswer(ans);
 };
 
@@ -114,11 +118,11 @@ const handleDecimal = (e) => {
 };
 
 const handleExponent = (e) => {
-	const previousState = getState();
+	const { currentInput } = getState();
 
 	const operator = e.target.innerText;
 
-	const answer = operatorMap[operator](previousState.currentInput);
+	const answer = operatorMap[operator](currentInput);
 
 	showAnswer(answer);
 };

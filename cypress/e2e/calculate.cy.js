@@ -82,6 +82,28 @@ describe('Calculator', () => {
 
 			answer.contains('0'); // -2 + 2 = 0
 		});
+
+		it('should allow the continuation of a calculation after pressing equals', () => {
+			const answer = cy.get('#answer');
+
+			const expression = ['number-5', 'add', 'number-7', 'equals'];
+
+			buttonPresser(expression);
+
+			answer.contains('12');
+
+			const contExpression = [
+				'add',
+				'number-6',
+				'subtract',
+				'number-2',
+				'equals',
+			];
+
+			buttonPresser(contExpression);
+
+			answer.contains('16');
+		});
 	});
 
 	describe('Complex Calculations', () => {
