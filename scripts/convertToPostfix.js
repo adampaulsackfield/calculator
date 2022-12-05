@@ -7,15 +7,15 @@ export const convertToPostfix = (equation) => {
 	// Filter is used here to catch any erroneous '' entires in the array.
 	const filtered = equation.filter((input) => input !== '');
 
-	let output = [];
-	let stack = [];
+	const output = [];
+	const stack = [];
 
 	filtered.forEach((char) => {
 		if (char === '+' || char === '-' || char === '*' || char === '/') {
 			while (
 				stack.length &&
 				stack[stack.length - 1] !== '(' &&
-				precedenceMap[char] <= precedenceMap[stack[stack.length - 1]]
+				precedenceMap.hasPrecedence(char, stack[stack.length - 1])
 			) {
 				output.push(stack.pop());
 			}

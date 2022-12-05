@@ -1,16 +1,22 @@
 // Global Colors
-$buttons-red: #ec7777;
-$buttons-green: #26f0cb;
 
-// Dark Mode Colors
-$background-dark-mode: #22252d;
-$background-dark-mode-light: #292d36;
-$button-background-dark-mode: #272b33;
+.dark-mode {
+	--background: #22252d;
+	--background-light: #292d36;
+	--button-background: #272b33;
+	--buttons-primary: #ec7777;
+	--buttons-secondary: #26f0cb;
+	--text-primary: white;
+}
 
-// Light Mode Colors
-$background-light-mode: #e9dac1;
-$background-light-mode-light: #f7ecde;
-$button-background-light-mode: #d2cbcb;
+.light-mode {
+	--background: #e9dac1;
+	--background-light: #f7ecde;
+	--button-background: #d2cbcb;
+	--buttons-primary: #983a3a;
+	--buttons-secondary: #158a75;
+	--text-primary: black;
+}
 
 // Breakpoints
 $tablet-breakpoint: 768px;

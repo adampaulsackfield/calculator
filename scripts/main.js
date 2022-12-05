@@ -24,7 +24,17 @@ const startCalc = () => {
 	const postfix = convertToPostfix(updatedState.equation);
 	const evaluation = evaluatePostfix(postfix);
 
-	currentCalculation.innerHTML = previousState.original.join(' ');
+	const stateUpdateExtraCalculations = {
+		...updatedState,
+		equation: [],
+		currentInput: evaluation,
+		numberLock: true,
+	};
+
+	setState(stateUpdateExtraCalculations);
+
+	currentCalculation.innerHTML =
+		stateUpdateExtraCalculations.original.join(' ');
 	answer.innerHTML = evaluation.toLocaleString('en-UK');
 };
 

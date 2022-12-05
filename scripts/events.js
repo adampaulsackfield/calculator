@@ -24,11 +24,11 @@ const xPowerY = document.getElementById('xPowerY');
 const brackets = document.querySelectorAll('.bracket');
 
 inputs.forEach((input) => {
-	input.addEventListener('click', (e) => addInput(e));
+	input.addEventListener('click', addInput);
 });
 
 operators.forEach((operator) => {
-	operator.addEventListener('click', (e) => addOperator(e));
+	operator.addEventListener('click', addOperator);
 });
 
 reset.addEventListener('click', handleReset);
@@ -39,14 +39,14 @@ percent.addEventListener('click', handlePercent);
 
 undo.addEventListener('click', handleUndo);
 
-decimal.addEventListener('click', (e) => handleDecimal(e));
+decimal.addEventListener('click', handleDecimal);
 
-xSquared.addEventListener('click', (e) => handleExponent(e));
+xSquared.addEventListener('click', handleExponent);
 
-xCubed.addEventListener('click', (e) => handleExponent(e));
+xCubed.addEventListener('click', handleExponent);
 
 xPowerY.addEventListener('click', handleXPowerY);
 
 brackets.forEach((bracket) => {
-	bracket.addEventListener('click', (e) => handleBracket(e));
+	bracket.addEventListener('click', handleBracket);
 });
