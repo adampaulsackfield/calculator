@@ -90,13 +90,13 @@ body {
 	justify-items: center;
 	border-radius: 20px;
 	padding: 1rem;
-	gap: 1rem;
+	gap: 0.6rem;
 
 	background-color: var(--background-light);
 
 	&__button {
-		width: 90px;
-		height: 90px;
+		width: 75px;
+		height: 75px;
 		gap: 1rem;
 		border-radius: 20px;
 		background-color: var(--button-background);
@@ -137,6 +137,7 @@ body {
 @media screen and (min-width: $tablet-breakpoint) {
 	.calculator {
 		grid-template-columns: repeat(10, 1fr);
+		gap: 1rem;
 
 		&__button {
 			width: 85px;
