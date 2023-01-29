@@ -1,5 +1,9 @@
 # Calculator
 
+## About
+
+This project is self-hosted on a ubuntu server, it is configured with nginx and https (certbot and letsencrypt).
+
 ## Requirements
 
 1. A deployed website (using GitHub Pages) ✅
