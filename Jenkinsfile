@@ -1,12 +1,7 @@
 #! /usr/bin/env groovy
 
 pipeline {
-  agent {
-      docker {
-          image 'node'
-          args '-u root'
-      }
-  }
+  agent any
 
   stages {
     stage('Install') {
@@ -16,23 +11,15 @@ pipeline {
       }
     }
 
-    stage('Testing Jest') {
+    stage('Build') {
       steps {
-        echo 'Testing Jest...'
-        sh 'npm run test:jest'
+        echo 'Building...'
+        sh 'npm run build'
       }
     }
 
-    stage('ls') {
+    stage('Copy to nginx directory') {
       steps {
-        echo 'listing...'
-        sh 'ls'
-      }
-    }
-
-    stage('Copy') {
-      steps {
-        echo 'Copying Files...'
         sh 'cp -r . /var/www/calculator.adamsackfield.uk/html'
       }
     }
