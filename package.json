@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:jest": "jest --watchAll",
+    "test:jest": "jest",
     "test:cypress": "cypress open"
   },
   "repository": {
