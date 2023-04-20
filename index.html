@@ -1,271 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Calculator | Adam Sackfield</title>
-		<link rel="stylesheet" href="styles/main.css" />
-	</head>
-	<body class="dark-mode">
-		<div class="container">
-			<header class="header">
-				<label>
-					<input class="header__toggle" type="checkbox" id="theme-toggle" />
-					<div>
-						<span class="fa-solid fa-moon header__moon"></span>
-						<div></div>
-						<span class="fa-solid fa-sun header__sun"></span>
-					</div>
-				</label>
-			</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator | adamsackfield.uk</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body class="dark-mode">
+    <div class="container">
+      <header class="header">
+        <label>
+          <input class="header__toggle" type="checkbox" id="theme-toggle" />
+          <div>
+            <span class="fa-solid fa-moon header__moon"></span>
+            <div></div>
+            <span class="fa-solid fa-sun header__sun"></span>
+          </div>
+        </label>
+      </header>
 
-			<section class="screen">
-				<h2 id="currentCalculation" class="screen__sum"></h2>
-				<h1 id="answer" class="screen__result">0</h1>
-			</section>
+      <section class="screen">
+        <h2 id="currentCalculation" class="screen__sum"></h2>
+        <h1 id="answer" class="screen__result">0</h1>
+      </section>
 
-			<section class="calculator">
-				<div
-					id="leftBracket"
-					class="calculator__button calculator__button--scientific bracket border"
-				>
-					<p>(</p>
-				</div>
+      <section class="calculator">
+        <div
+          id="leftBracket"
+          class="calculator__button calculator__button--scientific bracket border"
+        >
+          <p>(</p>
+        </div>
 
-				<div
-					id="rightBracket"
-					class="calculator__button calculator__button--scientific bracket border"
-				>
-					<p>)</p>
-				</div>
+        <div
+          id="rightBracket"
+          class="calculator__button calculator__button--scientific bracket border"
+        >
+          <p>)</p>
+        </div>
 
-				<div id="" class="calculator__button calculator__button--scientific">
-					<p>MC</p>
-				</div>
+        <div id="" class="calculator__button calculator__button--scientific">
+          <p>MC</p>
+        </div>
 
-				<div id="" class="calculator__button calculator__button--scientific">
-					<p>M+</p>
-				</div>
+        <div id="" class="calculator__button calculator__button--scientific">
+          <p>M+</p>
+        </div>
 
-				<div id="" class="calculator__button calculator__button--scientific">
-					<p>M-</p>
-				</div>
+        <div id="" class="calculator__button calculator__button--scientific">
+          <p>M-</p>
+        </div>
 
-				<div id="" class="calculator__button calculator__button--scientific">
-					<p>MR</p>
-				</div>
+        <div id="" class="calculator__button calculator__button--scientific">
+          <p>MR</p>
+        </div>
 
-				<div id="reset" class="calculator__button border">
-					<p class="calculator__button--green">AC</p>
-				</div>
+        <div id="reset" class="calculator__button border">
+          <p class="calculator__button--green">AC</p>
+        </div>
 
-				<div id="plusMinus" class="calculator__button border">
-					<p class="calculator__button--green">&#177;</p>
-				</div>
+        <div id="plusMinus" class="calculator__button border">
+          <p class="calculator__button--green">&#177;</p>
+        </div>
 
-				<div id="percent" class="calculator__button border">
-					<p class="calculator__button--green">%</p>
-				</div>
+        <div id="percent" class="calculator__button border">
+          <p class="calculator__button--green">%</p>
+        </div>
 
-				<div id="divide" class="calculator__button operator border">
-					<p class="calculator__button--red">/</p>
-				</div>
+        <div id="divide" class="calculator__button operator border">
+          <p class="calculator__button--red">/</p>
+        </div>
 
-				<div
-					id="secondBut"
-					class="calculator__button calculator__button--scientific"
-				>
-					<p>2<sup>nd</sup></p>
-				</div>
+        <div
+          id="secondBut"
+          class="calculator__button calculator__button--scientific"
+        >
+          <p>2<sup>nd</sup></p>
+        </div>
 
-				<div
-					id="xSquared"
-					class="calculator__button calculator__button--scientific border"
-				>
-					<p>X<sup>2</sup></p>
-				</div>
+        <div
+          id="xSquared"
+          class="calculator__button calculator__button--scientific border"
+        >
+          <p>X<sup>2</sup></p>
+        </div>
 
-				<div
-					id="xCubed"
-					class="calculator__button calculator__button--scientific border"
-				>
-					<p>X<sup>3</sup></p>
-				</div>
+        <div
+          id="xCubed"
+          class="calculator__button calculator__button--scientific border"
+        >
+          <p>X<sup>3</sup></p>
+        </div>
 
-				<div
-					id="xPowerY"
-					class="calculator__button calculator__button--scientific border"
-				>
-					<p>X<sup>y</sup></p>
-				</div>
+        <div
+          id="xPowerY"
+          class="calculator__button calculator__button--scientific border"
+        >
+          <p>X<sup>y</sup></p>
+        </div>
 
-				<div id="" class="calculator__button calculator__button--scientific">
-					<p>e<sup>x</sup></p>
-				</div>
+        <div id="" class="calculator__button calculator__button--scientific">
+          <p>e<sup>x</sup></p>
+        </div>
 
-				<div id="" class="calculator__button calculator__button--scientific">
-					<p>10<sup>x</sup></p>
-				</div>
+        <div id="" class="calculator__button calculator__button--scientific">
+          <p>10<sup>x</sup></p>
+        </div>
 
-				<div id="number-7" class="calculator__button input border">
-					<p>7</p>
-				</div>
+        <div id="number-7" class="calculator__button input border">
+          <p>7</p>
+        </div>
 
-				<div id="number-8" class="calculator__button input border">
-					<p>8</p>
-				</div>
+        <div id="number-8" class="calculator__button input border">
+          <p>8</p>
+        </div>
 
-				<div id="number-9" class="calculator__button input border">
-					<p>9</p>
-				</div>
+        <div id="number-9" class="calculator__button input border">
+          <p>9</p>
+        </div>
 
-				<div id="multiply" class="calculator__button operator border">
-					<p class="calculator__button--red">*</p>
-				</div>
+        <div id="multiply" class="calculator__button operator border">
+          <p class="calculator__button--red">*</p>
+        </div>
 
-				<div id="1/x" class="calculator__button calculator__button--scientific">
-					<p>1/x</p>
-				</div>
+        <div id="1/x" class="calculator__button calculator__button--scientific">
+          <p>1/x</p>
+        </div>
 
-				<div id="xy" class="calculator__button calculator__button--scientific">
-					<p><sup>2</sup> &#8730; x</p>
-				</div>
+        <div id="xy" class="calculator__button calculator__button--scientific">
+          <p><sup>2</sup> &#8730; x</p>
+        </div>
 
-				<div id="xy" class="calculator__button calculator__button--scientific">
-					<p><sup>3</sup> &#8730; x</p>
-				</div>
+        <div id="xy" class="calculator__button calculator__button--scientific">
+          <p><sup>3</sup> &#8730; x</p>
+        </div>
 
-				<div id="xy" class="calculator__button calculator__button--scientific">
-					<p><sup>y</sup> &#8730; x</p>
-				</div>
+        <div id="xy" class="calculator__button calculator__button--scientific">
+          <p><sup>y</sup> &#8730; x</p>
+        </div>
 
-				<div id="xy" class="calculator__button calculator__button--scientific">
-					<p>In</p>
-				</div>
+        <div id="xy" class="calculator__button calculator__button--scientific">
+          <p>In</p>
+        </div>
 
-				<div id="xy" class="calculator__button calculator__button--scientific">
-					<p>log<sub>10</sub></p>
-				</div>
+        <div id="xy" class="calculator__button calculator__button--scientific">
+          <p>log<sub>10</sub></p>
+        </div>
 
-				<div id="number-4" class="calculator__button input border">
-					<p>4</p>
-				</div>
+        <div id="number-4" class="calculator__button input border">
+          <p>4</p>
+        </div>
 
-				<div id="number-5" class="calculator__button input border">
-					<p>5</p>
-				</div>
+        <div id="number-5" class="calculator__button input border">
+          <p>5</p>
+        </div>
 
-				<div id="number-6" class="calculator__button input border">
-					<p>6</p>
-				</div>
+        <div id="number-6" class="calculator__button input border">
+          <p>6</p>
+        </div>
 
-				<div id="subtract" class="calculator__button operator border">
-					<p class="calculator__button--red">-</p>
-				</div>
+        <div id="subtract" class="calculator__button operator border">
+          <p class="calculator__button--red">-</p>
+        </div>
 
-				<div
-					id="factorial"
-					class="calculator__button calculator__button--scientific"
-				>
-					<p>x!</p>
-				</div>
+        <div
+          id="factorial"
+          class="calculator__button calculator__button--scientific"
+        >
+          <p>x!</p>
+        </div>
 
-				<div id="sin" class="calculator__button calculator__button--scientific">
-					<p>sin</p>
-				</div>
+        <div id="sin" class="calculator__button calculator__button--scientific">
+          <p>sin</p>
+        </div>
 
-				<div id="cos" class="calculator__button calculator__button--scientific">
-					<p>cos</p>
-				</div>
+        <div id="cos" class="calculator__button calculator__button--scientific">
+          <p>cos</p>
+        </div>
 
-				<div id="tan" class="calculator__button calculator__button--scientific">
-					<p>tan</p>
-				</div>
+        <div id="tan" class="calculator__button calculator__button--scientific">
+          <p>tan</p>
+        </div>
 
-				<div id="e" class="calculator__button calculator__button--scientific">
-					<p>e</p>
-				</div>
+        <div id="e" class="calculator__button calculator__button--scientific">
+          <p>e</p>
+        </div>
 
-				<div id="EE" class="calculator__button calculator__button--scientific">
-					<p>EE</p>
-				</div>
+        <div id="EE" class="calculator__button calculator__button--scientific">
+          <p>EE</p>
+        </div>
 
-				<div id="number-1" class="calculator__button input border">
-					<p>1</p>
-				</div>
+        <div id="number-1" class="calculator__button input border">
+          <p>1</p>
+        </div>
 
-				<div id="number-2" class="calculator__button input border">
-					<p>2</p>
-				</div>
+        <div id="number-2" class="calculator__button input border">
+          <p>2</p>
+        </div>
 
-				<div id="number-3" class="calculator__button input border">
-					<p>3</p>
-				</div>
+        <div id="number-3" class="calculator__button input border">
+          <p>3</p>
+        </div>
 
-				<div id="add" class="calculator__button operator red border">
-					<p class="calculator__button--red">+</p>
-				</div>
+        <div id="add" class="calculator__button operator red border">
+          <p class="calculator__button--red">+</p>
+        </div>
 
-				<div id="rad" class="calculator__button calculator__button--scientific">
-					<p>Rad</p>
-				</div>
+        <div id="rad" class="calculator__button calculator__button--scientific">
+          <p>Rad</p>
+        </div>
 
-				<div
-					id="sinh"
-					class="calculator__button calculator__button--scientific"
-				>
-					<p>sinh</p>
-				</div>
+        <div
+          id="sinh"
+          class="calculator__button calculator__button--scientific"
+        >
+          <p>sinh</p>
+        </div>
 
-				<div
-					id="cosh"
-					class="calculator__button calculator__button--scientific"
-				>
-					<p>cosh</p>
-				</div>
+        <div
+          id="cosh"
+          class="calculator__button calculator__button--scientific"
+        >
+          <p>cosh</p>
+        </div>
 
-				<div
-					id="tanh"
-					class="calculator__button calculator__button--scientific"
-				>
-					<p>tanh</p>
-				</div>
+        <div
+          id="tanh"
+          class="calculator__button calculator__button--scientific"
+        >
+          <p>tanh</p>
+        </div>
 
-				<div id="pi" class="calculator__button calculator__button--scientific">
-					<p>&pi;</p>
-				</div>
+        <div id="pi" class="calculator__button calculator__button--scientific">
+          <p>&pi;</p>
+        </div>
 
-				<div
-					id="rand"
-					class="calculator__button calculator__button--scientific"
-				>
-					<p>Rand</p>
-				</div>
+        <div
+          id="rand"
+          class="calculator__button calculator__button--scientific"
+        >
+          <p>Rand</p>
+        </div>
 
-				<div id="undo" class="calculator__button border">
-					<p>UNDO</p>
-				</div>
+        <div id="undo" class="calculator__button border">
+          <p>UNDO</p>
+        </div>
 
-				<div id="number-0" class="calculator__button input border">
-					<p>0</p>
-				</div>
+        <div id="number-0" class="calculator__button input border">
+          <p>0</p>
+        </div>
 
-				<div id="decimal" class="calculator__button border" data-value=".">
-					<p>.</p>
-				</div>
+        <div id="decimal" class="calculator__button border" data-value=".">
+          <p>.</p>
+        </div>
 
-				<div id="equals" class="calculator__button function red border">
-					<p class="calculator__button--red">=</p>
-				</div>
-			</section>
-		</div>
+        <div id="equals" class="calculator__button function red border">
+          <p class="calculator__button--red">=</p>
+        </div>
+      </section>
+    </div>
 
-		<script
-			src="https://kit.fontawesome.com/c4c89ed4c4.js"
-			crossorigin="anonymous"
-		></script>
-		<script src="./scripts/theme-toggle.js"></script>
-		<script src="./scripts/main.js" type="module" defer></script>
-	</body>
+    <script
+      src="https://kit.fontawesome.com/c4c89ed4c4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/theme-toggle.js"></script>
+    <script src="./scripts/main.js" type="module" defer></script>
+  </body>
 </html>
