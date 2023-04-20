@@ -22,5 +22,19 @@ pipeline {
         sh 'npm run test:jest'
       }
     }
+
+    stage('ls') {
+      steps {
+        echo 'listing...'
+        sh 'ls'
+      }
+    }
+
+    stage('Copy') {
+      steps {
+        echo 'Copying Files...'
+        sh 'cp -r . /var/www/calculator.adamsackfield.uk/html'
+      }
+    }
   }
 }
